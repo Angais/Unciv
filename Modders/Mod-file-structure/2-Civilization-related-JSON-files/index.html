@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1571,6 +1571,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Developers/Testing-AI-changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing AI changes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Developers/Testing-Android-Builds/" class="md-nav__link">
         
   
@@ -1857,62 +1885,6 @@
     
   
     Multiplayer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Other/Regions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Regions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Other/Simulations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Simulations
   
 
     
@@ -2509,7 +2481,7 @@
 <td>startBias</td>
 <td>List of strings</td>
 <td>empty</td>
-<td>Zero or more of: <a href="../../Unique-parameters/#terrainfilter">terrainFilter</a> or "Avoid [terrainFilter]". [^S]</td>
+<td>Zero or more of: <a href="../../Unique-parameters/#terrainfilter">terrainFilter</a> or "Avoid [terrainFilter]". Also merged with <code>Start bias [terrainFilter]</code> uniques on the nation and (for city-states) on their CityStateType. [^S]</td>
 </tr>
 <tr>
 <td>preferredVictoryType</td>
@@ -2738,10 +2710,10 @@ the AI chooses a random branch among the candidates.</p>
 <p>The object maps policy branches to priority values for the major civilization using the policy
 branches name and integers. Any branches not listed have a default value of 0</p>
 <p>The code below is an example of a valid "priorities" definition.</p>
-<div class="highlight"><pre><span></span><code>&quot;priorities&quot;: {
-    &quot;Tradition&quot;: 30,
-    &quot;Liberty&quot;: 20,
-    &quot;Honor&quot;: 10
+<div class="highlight"><pre><span></span><code>"priorities": {
+    "Tradition": 30,
+    "Liberty": 20,
+    "Honor": 10
 }
 </code></pre></div>
 <h3 id="personality-behaviours">Personality Behaviours</h3>
@@ -2791,6 +2763,12 @@ Cultured, Maritime, Mercantile, Militaristic, Religious.</p>
 <td>List of Strings</td>
 <td>empty</td>
 <td>List of <a href="../../uniques/">unique abilities</a> granted to  major civilizations when allied to city state</td>
+</tr>
+<tr>
+<td>uniques</td>
+<td>List of Strings</td>
+<td>empty</td>
+<td>Type-wide <a href="../../uniques/">uniques</a> for every city-state of this type (e.g. <code>Start bias [Coast]</code>)</td>
 </tr>
 <tr>
 <td>color</td>
@@ -2946,12 +2924,12 @@ priority, the AI chooses a random branch among the candidates.</p>
 <p>The object maps victory types to priority values for the major civilization using strings and
 integers. If the preferred victory type is not specified, the default priority value is set to 0.</p>
 <p>The code below is an example of a valid "priorities" definition.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;priorities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="nt">&quot;Neutral&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="nt">&quot;Cultural&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
-<span class="nt">&quot;Diplomatic&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="nt">&quot;Domination&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="nt">&quot;Scientific&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
+<div class="highlight"><pre><span></span><code><span class="nt">"priorities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="nt">"Neutral"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="nt">"Cultural"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="nt">"Diplomatic"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="nt">"Domination"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="nt">"Scientific"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="questsjson">Quests.json</h2>
@@ -3123,10 +3101,10 @@ strings to floats. If the preferred victory type is not found, the default multi
 <p>The code below is an example of a valid "weightForCityStateType" definition. In this case, a
 friendly militaristic city state will be 0.4 (0.2 × 2) times as likely to pick this quest than a
 quest with weight 1.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&quot;weightForCityStateType&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="nt">&quot;Hostile&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="nt">&quot;Friendly&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
-<span class="nt">&quot;Militaristic&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<div class="highlight"><pre><span></span><code><span class="nt">"weightForCityStateType"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="nt">"Hostile"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="nt">"Friendly"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span>
+<span class="nt">"Militaristic"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="religionsjson">Religions.json</h2>
@@ -3334,7 +3312,7 @@ outer list of 'columns', which in turn contains one or more tech each.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
